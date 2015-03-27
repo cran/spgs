@@ -1,0 +1,114 @@
+
+R version 3.1.1 (2014-07-10) -- "Sock it to Me"
+Copyright (C) 2014 The R Foundation for Statistical Computing
+Platform: i386-w64-mingw32/i386 (32-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> #ProfileTest.R
+> 
+> library(spgs)
+> 
+> #Set random number generator and initialise random seed
+> set.seed(331, kind="Mersenne-Twister", normal.kind="Inversion")
+> 
+> #Simulate a sequence of nucleotides as a Markov chain
+> len <- 200 #length of sequence to simulate
+> s <- simulateMarkovChain(len, matrix(0.25, 4, 4), states=c("a", "c", "g", "t"))
+> 
+> #Add some ambiguous symbols and uppercase symbols to s
+> idx <- sample(len, len/4)
+> s[idx] <- toupper(s[idx])
+> idx <- sample(len, len/8)
+> ambiguousSymbols <- c("b", "B", "d", "D", "h", "H", "v", "V", "s", "S", "w", "W", "m", "M", "k", "K", "r", "R", "y", "Y", "n", "N", "x", "X", "-")
+> s[idx] <- sample(ambiguousSymbols, len/8, replace=TRUE)
+> 
+> #Test OligoProfile class
+> op <- oligoProfile(s,2, name="Markov chain", plot=FALSE)
+> print(op)
+
+	2-mer Oligo Profile on the Primary Strand of Markov chain
+
+Content type = dna 
+Circular =  TRUE 
+Units = percentage 
+   aa    ac    ag    at    ca    cc    cg    ct    ga    gc    gg    gt    ta 
+ 3.43  6.29 10.86  5.71  8.57  5.14  2.86  7.43  7.43  5.71  6.29  5.71  6.86 
+   tc    tg    tt 
+ 6.86  5.14  5.71 
+
+> op <- oligoProfile(s,2, case="u", name="Markov chain", plot=FALSE)
+> print(op)
+
+	2-mer Oligo Profile on the Primary Strand of Markov chain
+
+Content type = dna 
+Circular =  TRUE 
+Units = percentage 
+   AA    AC    AG    AT    CA    CC    CG    CT    GA    GC    GG    GT    TA 
+ 3.43  6.29 10.86  5.71  8.57  5.14  2.86  7.43  7.43  5.71  6.29  5.71  6.86 
+   TC    TG    TT 
+ 6.86  5.14  5.71 
+
+> op <- oligoProfile(s,2, case="a", name="Markov chain", plot=FALSE)
+> print(op)
+
+	2-mer Oligo Profile on the Primary Strand of Markov chain
+
+Content type = dna 
+Circular =  TRUE 
+Units = percentage 
+   AA    AC    AG    AT    Aa    Ac    Ag    At    CA    CC    CG    CT    Ca 
+0.571 1.143 0.000 0.000 0.571 1.143 0.000 0.571 0.571 0.000 0.000 0.571 2.857 
+   Cc    Cg    Ct    GA    GC    GG    GT    Ga    Gc    Gg    Gt    TA    TC 
+0.571 0.571 1.714 0.000 0.571 0.571 0.000 2.286 1.143 1.714 0.571 0.571 0.000 
+   TG    TT    Ta    Tc    Tg    Tt    aA    aC    aG    aT    aa    ac    ag 
+1.143 0.571 1.714 1.714 0.000 2.286 0.000 1.143 1.143 2.857 2.286 2.857 9.714 
+   at    cA    cC    cG    cT    ca    cc    cg    ct    gA    gC    gG    gT 
+2.286 0.571 1.714 1.143 1.714 4.571 2.857 1.143 3.429 0.571 0.571 1.143 1.143 
+   ga    gc    gg    gt    tA    tC    tG    tT    ta    tc    tg    tt 
+4.571 3.429 2.857 4.000 1.143 1.714 1.714 1.143 3.429 3.429 2.286 1.714 
+
+> op <- oligoProfile(s,2, disambiguate=FALSE, name="Markov chain", plot=FALSE)
+> print(op)
+
+	2-mer Oligo Profile on the Primary Strand of Markov chain
+
+Content type = dna 
+Circular =  TRUE 
+Units = percentage 
+ aa  ab  ac  ad  ag  ak  am  an  ar  as  at  aw  ax  ay  ba  bb  bc  bd  bg  bk 
+3.0 0.0 5.0 0.0 9.0 0.0 0.0 0.5 0.0 0.0 5.0 0.0 0.5 0.0 0.0 0.0 0.5 0.0 0.0 0.0 
+ bm  bn  br  bs  bt  bw  bx  by  ca  cb  cc  cd  cg  ck  cm  cn  cr  cs  ct  cw 
+0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 6.0 0.0 4.5 0.0 2.5 0.5 0.5 0.0 0.0 0.0 5.5 0.0 
+ cx  cy  da  db  dc  dd  dg  dk  dm  dn  dr  ds  dt  dw  dx  dy  ga  gb  gc  gd 
+1.0 0.5 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 6.0 0.5 4.5 0.5 
+ gg  gk  gm  gn  gr  gs  gt  gw  gx  gy  ka  kb  kc  kd  kg  kk  km  kn  kr  ks 
+5.0 0.0 0.0 0.0 0.5 0.5 3.5 0.5 0.5 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+ kt  kw  kx  ky  ma  mb  mc  md  mg  mk  mm  mn  mr  ms  mt  mw  mx  my  na  nb 
+1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 
+ nc  nd  ng  nk  nm  nn  nr  ns  nt  nw  nx  ny  ra  rb  rc  rd  rg  rk  rm  rn 
+0.5 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+ rr  rs  rt  rw  rx  ry  sa  sb  sc  sd  sg  sk  sm  sn  sr  ss  st  sw  sx  sy 
+0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 
+ ta  tb  tc  td  tg  tk  tm  tn  tr  ts  tt  tw  tx  ty  wa  wb  wc  wd  wg  wk 
+5.0 0.0 5.0 0.5 4.5 0.5 0.0 0.0 0.0 0.0 4.5 0.5 1.0 0.0 0.5 0.0 0.5 0.0 0.5 0.0 
+ wm  wn  wr  ws  wt  ww  wx  wy  xa  xb  xc  xd  xg  xk  xm  xn  xr  xs  xt  xw 
+0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.5 0.0 0.0 0.0 0.5 0.0 0.5 0.0 
+ xx  xy  ya  yb  yc  yd  yg  yk  ym  yn  yr  ys  yt  yw  yx  yy 
+0.0 0.5 0.0 0.0 0.5 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.0 0.0 
+
+> 
+> proc.time()
+   user  system elapsed 
+   0.21    0.14    0.34 
