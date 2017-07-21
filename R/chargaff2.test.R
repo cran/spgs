@@ -93,8 +93,12 @@ chargaff2testPValueFromMonteCarlo <- function(epsilon, n)
 	if (!is.numeric(n) || length(n)!=1 || n<=0 || n!=floor(n)) 
   	stop("n must be a positive integer")
 	p <- rexp(16*n, 1)
-	p.val <- .C("ComputeEta2Statistic", as.double(p), as.integer(n), as.double(epsilon),
-		res=double(1), PACKAGE="spgs")$res
+	p.val <- .C(c_ComputeEta2Statistic, 
+	  as.double(p), 
+	  as.integer(n), 
+	  as.double(epsilon),
+		res=double(1)
+  )$res
 	p.val
 } #function
 
@@ -110,9 +114,13 @@ chargaff2testPValueFromMonteCarlo2 <- function(epsilon, n, diag=FALSE)
 #p <- array(rexp(16*n, 1), c(n, 4, 4))
 #x <- p/array(rep(apply(p, c(1,2), sum), 4), dim=dim(p))
 	p <- rexp(16*n, 1)
-	x <- .C("ProbabilityNormalise", as.double(p), as.integer(n), as.integer(4), 
-		as.integer(4), res=double(16*n),
-		PACKAGE="spgs")$res
+	x <- .C(c_ProbabilityNormalise, 
+	  as.double(p), 
+	  as.integer(n), 
+	  as.integer(4), 
+		as.integer(4), 
+		res=double(16*n)
+  )$res
 	x <- array(x, dim=c(n, 4, 4))
 	x24 <- 1-(x[,2,1]+x[,2,2]+x[,2,3])
 	f1 <- x[,2,2]

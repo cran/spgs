@@ -121,8 +121,13 @@ agctTestPValueFromMonteCarlo <- function(epsilon, n)
 	if (!is.numeric(n) || length(n)!=1 || n<=0 || n!=floor(n)) 
   	stop("n must be a positive integer")
 	rexp <- rexp(4*n, 1)
-	pr <- .C("ProbabilityNormalise", as.double(rexp), as.integer(n), as.integer(1), 
-		as.integer(4), res=double(4*n), PACKAGE="spgs")$res
+	pr <- .C(c_ProbabilityNormalise, 
+	  as.double(rexp), 
+	  as.integer(n), 
+	  as.integer(1), 
+		as.integer(4), 
+		res=double(4*n)
+  )$res
 	dim(pr) <- c(n,4)
 	xstar <- 0.25+0.5*(pr[,1]-pr[,3])
 	xstar[xstar<0] <- 0

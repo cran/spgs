@@ -20,8 +20,8 @@ http://www.R-project.org/Licenses/GPL-2.
 
 
 
-// cppfuncs.cpp
-// Source code to C++ routines used by the SPGS package
+// spgs.c
+// Source code to C routines used by the SPGS package
 
 
 #include <stdio.h>
@@ -37,7 +37,7 @@ http://www.R-project.org/Licenses/GPL-2.
 
 
 
-SPGS_API void GenerateMarkovSamplePath(double *dTransMat, double *dInitDist, 
+void attribute_hidden GenerateMarkovSamplePath(double *dTransMat, double *dInitDist, 
 int *iNumStates, double *dU, int *iSamples, int *iSamplePath)
 {
 	int i, j;
@@ -75,7 +75,7 @@ int *iNumStates, double *dU, int *iSamples, int *iSamplePath)
 } //function
 
 
-SPGS_API void PairCounts(int *pSeq, int *pn, int *piUniqueElements, int *piCircular, int *piPairCounts)
+void attribute_hidden PairCounts(int *pSeq, int *pn, int *piUniqueElements, int *piCircular, int *piPairCounts)
 {
 // Declare variables
 	int *ps, *psn;
@@ -102,7 +102,7 @@ SPGS_API void PairCounts(int *pSeq, int *pn, int *piUniqueElements, int *piCircu
 } // function
 
 
-SPGS_API void TripleCounts(int *pSeq, int *pn, int *piUniqueElements, 
+void attribute_hidden TripleCounts(int *pSeq, int *pn, int *piUniqueElements, 
 int *piCircular, int*piTripleCounts)
 {
 // Declare variables
@@ -133,7 +133,7 @@ int *piCircular, int*piTripleCounts)
 } // function
 
 
-SPGS_API void QuadrupleCounts(int *pSeq, int *pn, int *piUniqueElements, 
+void attribute_hidden QuadrupleCounts(int *pSeq, int *pn, int *piUniqueElements, 
 int *piCircular, int *piQuadrupleCounts)
 {
 // Declare variables
@@ -167,7 +167,7 @@ int *piCircular, int *piQuadrupleCounts)
 } // function
 
 
-SPGS_API void CylinderCounts(int *pSeq, int *piN, int *piLags, int *piNLags,
+void attribute_hidden CylinderCounts(int *pSeq, int *piN, int *piLags, int *piNLags,
 int *piUniqueElements, int *piCircular, int *counts)
 {
 // Declare variables
@@ -210,7 +210,7 @@ int *piUniqueElements, int *piCircular, int *counts)
 } // function
 
 
-SPGS_API void Cyl2lag2Counts(int *pSeq, int *piN, int *piLags, 
+void attribute_hidden Cyl2lag2Counts(int *pSeq, int *piN, int *piLags, 
 int *piCircular, int *piCounts)
 {
 // Declare variables
@@ -246,7 +246,7 @@ int *piCircular, int *piCounts)
 } // function
 
 
-SPGS_API void ProbabilityNormalise(double *pdRexp, int *piN, int *piRows, 
+void attribute_hidden ProbabilityNormalise(double *pdRexp, int *piN, int *piRows, 
 	int *piCols, double *pdRes)
 {
 		int r, c, n;
@@ -265,7 +265,7 @@ SPGS_API void ProbabilityNormalise(double *pdRexp, int *piN, int *piRows,
 } // function
 
 
-SPGS_API void ComputeEta1Statistic(double *pdRexp, int *piN, double *pdEpsilon, double *pdRes)
+void attribute_hidden ComputeEta1Statistic(double *pdRexp, int *piN, double *pdEpsilon, double *pdRes)
 {
 	int r, c, n; // counters
  double sum, stat; // for accumulating row sums and holding the test statistic
@@ -322,7 +322,7 @@ SPGS_API void ComputeEta1Statistic(double *pdRexp, int *piN, double *pdEpsilon, 
 } // function
 
 
-SPGS_API void ComputeEta2Statistic(double *pdRexp, int *piN, double *pdEpsilon, double *pdRes)
+void attribute_hidden ComputeEta2Statistic(double *pdRexp, int *piN, double *pdEpsilon, double *pdRes)
 {
 	int r, c, n; // counters
  double sum, stat; // for accumulating row sums and holding the test statistic
@@ -386,7 +386,7 @@ SPGS_API void ComputeEta2Statistic(double *pdRexp, int *piN, double *pdEpsilon, 
 } // function
 
 
-SPGS_LOCAL uint64 CountIncreasingPairsHelper(double *pdSeries, size_t left, size_t right, 
+uint64 attribute_hidden CountIncreasingPairsHelper(double *pdSeries, size_t left, size_t right, 
 double *pdScratch, int *piOverflow)
 {
 	*piOverflow = 0; // initialise overflow flag to 0
@@ -444,7 +444,7 @@ double *pdScratch, int *piOverflow)
 	} // if
 } // function
 
-SPGS_API void CountIncreasingPairs(double *pdSeries, int *piN, 
+void attribute_hidden CountIncreasingPairs(double *pdSeries, int *piN, 
 double *pdScratch, double *pdRes, int *piOverflow)
 {
 	*pdRes = (double)CountIncreasingPairsHelper(pdSeries, 0, *piN, pdScratch, piOverflow);

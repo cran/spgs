@@ -23,55 +23,94 @@ http://www.R-project.org/Licenses/GPL-2.
 // spgs.h
 // Header file for the C++ routines used by the SPGS package
 
-
-// Include shared object defines
-#include "sharedef.h"
-#include "uint64.h" // for uint64 type and UINT64MAX define
-
 #ifndef __spgs_h__
 #define __spgs_h__
 
-#ifdef SPGS_DLL // defined if being compiled as a dll
-  #ifdef SPGS_EXPORT // defined if building the dll
-    #define SPGS_API DLL_EXPORT
-  #else // otherwise, using the dll
-    #define SPGS_API DLL_IMPORT
-  #endif // SPGS_EXPORT
-  #define SPGS_LOCAL DLL_LOCAL
-#else // SPGS_DLL is not defined: this means it is a static lib.
-  #define SPGS_API
-  #define SPGS_LOCAL
-#endif // SPGS_DLL
-
+//#include "sharedef.h"
+#include "uint64.h" // for uint64 type and UINT64MAX define
+#include <R_ext/Rdynload.h>
+#include <Rdefines.h>
+#include <R_ext/Visibility.h>	
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 	// Functions
-SPGS_API void GenerateMarkovSamplePath(double *dTransMat, double *dInitDist, 
+void attribute_hidden GenerateMarkovSamplePath(double *dTransMat, double *dInitDist, 
 int *iNumStates, double *u, int *iSamples, int *iSamplePath);
 
-SPGS_API void PairCounts(int *pSeq, int *pn, int *piUniqueElements, 
+void attribute_hidden PairCounts(int *pSeq, int *pn, int *piUniqueElements, 
 int *piCircular, int *piPairCounts);
-SPGS_API void TripleCounts(int *pSeq, int *pn, int *piUniqueElements, 
+void attribute_hidden TripleCounts(int *pSeq, int *pn, int *piUniqueElements, 
 int *piCircular, int *piTripleCounts);
-SPGS_API void QuadrupleCounts(int *pSeq, int *pn, int *piUniqueElements, 
+void attribute_hidden QuadrupleCounts(int *pSeq, int *pn, int *piUniqueElements, 
 int *piCircular, int *piQuadrupleCounts);
-SPGS_API void CylinderCounts(int *pSeq, int *piN, int *piLags, int *piNLags,
+void attribute_hidden CylinderCounts(int *pSeq, int *piN, int *piLags, int *piNLags,
 int *piUniqueElements, int *piCircular, int *counts);
-SPGS_API void Cyl2lag2Counts(int *pSeq, int *piN, int *piLags, 
+void attribute_hidden Cyl2lag2Counts(int *pSeq, int *piN, int *piLags, 
 int *piCircular, int *piCounts);
 
-SPGS_API void ProbabilityNormalise(double *pdRexp, int *piN, int *piRows, 
+void attribute_hidden ProbabilityNormalise(double *pdRexp, int *piN, int *piRows, 
 	int *piCols, double *pdRes);
-SPGS_API void ComputeEta1Statistic(double *pdRexp, int *piN, double *pdEpsilon, double *pdRes);
-SPGS_API void ComputeEta2Statistic(double *pdRexp, int *piN, double *pdEpsilon, double *pdRes);
-
-SPGS_API void CountIncreasingPairs(double *pdSeries, int *piN, 
+void attribute_hidden ComputeEta1Statistic(double *pdRexp, int *piN, double *pdEpsilon, double *pdRes);
+void attribute_hidden ComputeEta2Statistic(double *pdRexp, int *piN, double *pdEpsilon, double *pdRes);
+void attribute_hidden CountIncreasingPairs(double *pdSeries, int *piN, 
 double *pdScratch, double *pdRes, int *piOverflow);
-SPGS_LOCAL uint64 CountIncreasingPairsHelper(double *pdSeries, size_t left, size_t right, 
+uint64 attribute_hidden CountIncreasingPairsHelper(double *pdSeries, size_t left, size_t right, 
 double *pdScratch, int *piOverflow);
+
+
+	// R registration
+	
+static R_NativePrimitiveArgType GMSP_T[] = {
+    REALSXP, REALSXP, INTSXP, REALSXP, INTSXP, INTSXP
+};
+
+static R_NativePrimitiveArgType INTS5_T[] = {
+    INTSXP, INTSXP, INTSXP, INTSXP, INTSXP
+};
+
+static R_NativePrimitiveArgType INTS7_T[] = {
+    INTSXP, INTSXP, INTSXP, INTSXP, INTSXP, INTSXP, INTSXP
+};
+
+static R_NativePrimitiveArgType ProbabilityNormalise_T[] = {
+    REALSXP, INTSXP, INTSXP, INTSXP, REALSXP
+};
+
+static R_NativePrimitiveArgType ComputeEta_T[] = {
+    REALSXP, INTSXP, REALSXP, REALSXP
+};
+
+static R_NativePrimitiveArgType CountIncreasingPairs_T[] = {
+    REALSXP, INTSXP, REALSXP, REALSXP, INTSXP
+};
+
+static const R_CMethodDef cMethods[] = {
+  {"GenerateMarkovSamplePath", (DL_FUNC)GenerateMarkovSamplePath, 6, GMSP_T},
+  {"PairCounts", (DL_FUNC)PairCounts, 5, INTS5_T},
+  {"TripleCounts", (DL_FUNC)TripleCounts, 5, INTS5_T},
+  {"QuadrupleCounts", (DL_FUNC)QuadrupleCounts, 5, INTS5_T},
+  {"CylinderCounts", (DL_FUNC)CylinderCounts, 7, INTS7_T},
+  {"Cyl2lag2Counts", (DL_FUNC)Cyl2lag2Counts, 5, INTS5_T},
+  {"ProbabilityNormalise", (DL_FUNC)ProbabilityNormalise, 5, ProbabilityNormalise_T},
+  {"ComputeEta1Statistic", (DL_FUNC)ComputeEta1Statistic, 4, ComputeEta_T},
+  {"ComputeEta2Statistic", (DL_FUNC)ComputeEta2Statistic, 4, ComputeEta_T},
+  {"CountIncreasingPairs", (DL_FUNC)CountIncreasingPairs, 5, CountIncreasingPairs_T},
+  {NULL, NULL, 0, NULL}
+};
+
+void attribute_visible R_init_spgs(DllInfo *dll)
+{
+    R_registerRoutines(dll, cMethods, NULL, NULL, NULL);
+    R_useDynamicSymbols(dll, FALSE);
+	}
+  
+void attribute_hidden R_unload_spgs(DllInfo *info)
+{
+// Nothing needs to be done to unload this dll
+}
 
 #ifdef __cplusplus
 } // End of extern "C" block

@@ -37,13 +37,12 @@ pair.counts <- function(x, case=c("lower", "upper", "as is"), circular=TRUE)
   names(tr) <- sort(uniqueSymbols)
   x <- tr[x]
 #Count consecutive pairs in the sequence
-	counts <- .C("PairCounts",
+	counts <- .C(c_PairCounts,
 		as.integer(x),
 		as.integer(length(x)),
 		as.integer(numSymbols),
 		as.integer(circular),
-		counts=integer(numSymbols*numSymbols),
-		PACKAGE="spgs"
+		counts=integer(numSymbols*numSymbols)
 	)$counts
 	dim(counts) <- c(numSymbols, numSymbols)
 	dimnames(counts) <- list(names(tr), names(tr))
@@ -67,13 +66,12 @@ if (!is.character(x))
 	names(tr) <- sort(uniqueSymbols)
 	x <- tr[x]
 #Count consecutive triples in the sequence
-	counts <- .C("TripleCounts",
+	counts <- .C(c_TripleCounts,
 		as.integer(x),
 		as.integer(length(x)),
 		as.integer(numSymbols),
 		as.integer(circular),
-		counts=integer(numSymbols*numSymbols*numSymbols),
-		PACKAGE="spgs"
+		counts=integer(numSymbols*numSymbols*numSymbols)
 	)$counts
 	dim(counts) <- c(numSymbols, numSymbols, numSymbols)
 	dimnames(counts) <- list(names(tr), names(tr), names(tr))
@@ -97,13 +95,12 @@ if (!is.character(x))
 	names(tr) <- sort(uniqueSymbols)
 	x <- tr[x]
 #Count consecutive quadruples in the sequence
-	counts <- .C("QuadrupleCounts",
+	counts <- .C(c_QuadrupleCounts,
 		as.integer(x),
 		as.integer(length(x)),
 		as.integer(numSymbols),
 		as.integer(circular),
-		counts=integer(numSymbols*numSymbols*numSymbols*numSymbols),
-		PACKAGE="spgs"
+		counts=integer(numSymbols*numSymbols*numSymbols*numSymbols)
 	)$counts
 #	counts <- table(x, c(x[2:n], x[1]), c(x[3:n], x[1:2]), c(x[4:n], x[1:3]))
 	dim(counts) <- c(numSymbols, numSymbols, numSymbols, numSymbols)
@@ -131,13 +128,12 @@ if (!is.character(x))
 	names(tr) <- symbols
 	x <- tr[x]
 #Count consecutive quadruples in the sequence
-	counts <- .C("Cyl2lag2Counts",
+	counts <- .C(c_Cyl2lag2Counts,
 		as.integer(x),
 		as.integer(length(x)),
 		as.integer(last.lag),
 		as.integer(circular),
-		quads=integer(numSymbols*numSymbols*numSymbols*numSymbols*(last.lag+1)),
-		PACKAGE="spgs"
+		quads=integer(numSymbols*numSymbols*numSymbols*numSymbols*(last.lag+1))
 	)$quads
 	dim(counts) <- c(numSymbols, numSymbols, numSymbols, numSymbols, last.lag+1)
 	dimnames(counts) <- list(symbols, symbols, symbols, symbols, 0:last.lag)
@@ -169,15 +165,14 @@ circular=TRUE)
 	names(tr) <- sort(uniqueSymbols)
 	x <- tr[x]
 #Count consecutive quadruples in the sequence
-	counts <- .C("CylinderCounts",
+	counts <- .C(c_CylinderCounts,
 		as.integer(x),
 		as.integer(length(x)),
 		as.integer(cylinder),
 		as.integer(cylinderLen),
 		as.integer(numSymbols),
 		as.integer(circular),
-		counts=integer(numSymbols**cylinderLen),
-		PACKAGE="spgs"
+		counts=integer(numSymbols**cylinderLen)
 	)$counts
 	dim(counts) <- rep(numSymbols, cylinderLen)
 	dimnames(counts) <- rep(list(names(tr)), cylinderLen)

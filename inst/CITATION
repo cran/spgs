@@ -1,0 +1,16 @@
+#Citation file for spgs package
+
+year <- sub("-.*", "", meta$Date)
+note <- sprintf("R package version %s", meta$Version)
+
+bibentry(bibtype = "Manual",
+         title = "{spgs}: Statistical Patterns in Genomic Sequences",
+         author = c(person("Andrew", "Hart"),
+                    person("Servet", "Mart{\\'\\i}nez")),
+         year = year,
+         note = note,
+         url = "https://CRAN.R-project.org/package=spgs",
+         textVersion =
+         paste0("Andrew Hart and Servet Martínez (", year, 
+         "). spgs: Statistical Patterns in Genomic Sequences. ", note, "."))
+

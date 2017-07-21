@@ -99,7 +99,13 @@ rank.test <- function(x)
 #  for (i in 1:(n-1))
 #   pairs <- pairs + sum(x[i:(n-1)]<generate x[(i+1):n]) #count positive differences
 #  pairs <- sum(sapply(2:n, function(i) sum(x[i:n]>x[i-1]))) #count all pairs of positive differences
-pairs <- .C("CountIncreasingPairs", as.double(x), as.integer(n), double(n), count=double(1), overflow=integer(1))
+pairs <- .C(c_CountIncreasingPairs, 
+  as.double(x), 
+  as.integer(n), 
+  double(n), 
+  count=double(1), 
+  overflow=integer(1)
+)
 if (pairs$overflow)
   if (pairs$count==2^32-1)
     warning("a 32-bit integer overflow has occurred and the results of rank.test should not be trusted")

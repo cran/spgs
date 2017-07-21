@@ -142,7 +142,8 @@ Markovianness and Conditional Independence in Annotated Bacterial DNA.
 Andrew Hart and Servet Martínez
 }
 \seealso{
-\code{\link{markov.test}}, \code{\link{ks.unif.test}}, \code{\link{chisq.unif.test}},
+\code{\link{diid.disturbance}}, \code{\link{markov.test}}, 
+\code{\link{ks.unif.test}}, \code{\link{chisq.unif.test}},
 \code{\link{diffsign.test}}, \code{\link{turningpoint.test}}, \code{\link{rank.test}}, 
 \code{\link{lb.test}}
 }

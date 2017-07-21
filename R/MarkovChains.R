@@ -98,14 +98,13 @@ simulateMarkovChain <- function(n, trans.mat, init.dist=NULL, states=colnames(tr
 	if (length(init.dist)!=ncol(trans.mat))
 		stop("The dimensions of trans.mat and length of init.dist do not match")
 	disturbance <- runif(n) #generate U(0,1) noise
-	samplePath <- .C("GenerateMarkovSamplePath", #function name
+	samplePath <- .C(c_GenerateMarkovSamplePath, #function name
 		as.double(trans.mat), #transition matrix of Markov chain
 		as.double(init.dist), #probability function of initial state
 		as.integer(length(states)), #number of states
 		as.double(disturbance), #source of U(0,1) random noise to drive the simulation
 		as.integer(n), #length of sample path to simulate
-		path=integer(n), #workspace to hold simulation
-		PACKAGE="spgs"
+		path=integer(n) #workspace to hold simulation
 	)$path
 	states[samplePath] #convert numeric simulation to specified state space representation and return
 } #function

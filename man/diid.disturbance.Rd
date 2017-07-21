@@ -56,7 +56,7 @@ noise as a numeric vector.
 Andrew Hart and Servet Martínez
 }
 \seealso{
-\code{\link{markov.test}}, \code{\link{diid.test}}, \code{\link{diid.disturbance}}
+\code{\link{markov.test}}, \code{\link{diid.test}}, \code{\link{markov.disturbance}}
 }
 \keyword{htest}
 \keyword{datagen}

@@ -1,4 +1,4 @@
-AC_INIT([spgs], [1.0])
+AC_INIT([spgs], [1.0.1])
 
 dnl Find the compilers and flags to use
 : ${R_HOME=`R RHOME`}

@@ -91,8 +91,12 @@ chargaff1testPValueFromMonteCarlo <- function(epsilon, n)
 	if (!is.numeric(n) || length(n)!=1 || n<=0 || n!=floor(n)) 
   	stop("n must be a positive integer")
 	p <- rexp(16*n, 1)
-	p.val <- .C("ComputeEta1Statistic", as.double(p), as.integer(n), as.double(epsilon),
-		res=double(1), PACKAGE="spgs")$res
+	p.val <- .C(c_ComputeEta1Statistic, 
+	  as.double(p), 
+	  as.integer(n), 
+	  as.double(epsilon),
+	  res=double(1)
+	)$res
 	p.val
 } #function
 
