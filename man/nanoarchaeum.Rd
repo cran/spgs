@@ -25,7 +25,6 @@ This data set contains the DNA sequence for the chromosome of the \emph{Nanoarch
 equitans} Kin4-M bacteria.  The Accession number for this sequence is 
 NC_005213.1.
   }
-\usage{nanoarchaeum}
 \format{a \code{\link[seqinr]{SeqFastadna}} object.}
 \source{The NCBI ftp server at ftp://ftp.ncbi.nlm.nih.gov in the 
 /genomes/bacteria directory.}

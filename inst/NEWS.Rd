@@ -1,6 +1,14 @@
 \name{NEWS}
 \title{News for Package \pkg{spgs}}
 
+\section{Changes in version 1.0-3}{
+\itemize{
+\item Fixed a bit of bad programming style that breaks chargaff.gibbs.test in R 
+4.0. More precisely, I now use \code{inherits(x, "try-error")} instead of 
+\code{class(x)=="try-error"}.
+}
+}
+
 \section{Changes in version 1.0-2}{
   \itemize{
     \item Tweaks were made to spgs-package.Rd in response to CRAN maintainer

@@ -24,7 +24,6 @@
 This data set contains the DNA sequence for the \emph{Pieris rapae} granulovirus genome.  The Accession number for this sequence is 
 NC_013797.1.
   }
-\usage{pieris}
 \format{a \code{\link[seqinr]{SeqFastadna}} object.}
 \source{The NCBI ftp server at ftp://ftp.ncbi.nlm.nih.gov in the 
 /genomes/viruses directory.}

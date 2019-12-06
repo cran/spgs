@@ -80,7 +80,7 @@ chargaff.gibbs.test <- function(x, maxLag=200)
 
 #Compute test statistic
 	VInv <- try(solve(covInfo$v), silent=TRUE) #get the inverse of the asymptotic variance-covariance matrix
-	if (class(VInv)=="try-error")
+	if (inherits(VInv, "try-error"))
 	{
 		stat <- NA
 		warning("It is not possible to calculate the test statistic since the covariance matrix v estimated for fhat is singular.")

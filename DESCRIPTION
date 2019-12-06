@@ -2,8 +2,8 @@ Package: spgs
 Type: Package
 Encoding: latin1
 Title: Statistical Patterns in Genomic Sequences
-Version: 1.0-2
-Date: 2018-05-16
+Version: 1.0-3
+Date: 2019-12-06
 Authors@R: c(person("Andrew", "Hart", role = c("aut", "cre"), email = "ahart@dim.uchile.cl"),
   person("Servet", "Martínez", role = "aut"),
   person("Universidad de Chile", role = "cph"),
@@ -31,6 +31,6 @@ Description: A collection of statistical hypothesis tests and other
 License: GPL (>= 2)
 NeedsCompilation: yes
 Classification/MSC: 62F03, 62G10, 62M07, 62P10, 92D20
-Packaged: 2018-05-16 15:14:41 UTC; ahart
+Packaged: 2019-12-06 18:11:01 UTC; ahart
 Repository: CRAN
-Date/Publication: 2018-05-16 17:30:45 UTC
+Date/Publication: 2019-12-06 19:20:02 UTC

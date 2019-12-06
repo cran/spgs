@@ -1,4 +1,4 @@
-00d6c5b5231edf3dcba03895278d1675 *DESCRIPTION
+ae254b094fdb1963507b5d06536fe9a7 *DESCRIPTION
 43fede49d7909e409e4b8cd4b517112b *NAMESPACE
 32c21e408ebfcd9ff22d814e113a5f20 *R/FHatCovariances.R
 7cb71ea749e13f059eb26e126b9b2459 *R/GibbsCovariances.R
@@ -7,7 +7,7 @@ ddf8b381debd5a5428953b5493f4ccc7 *R/MarkovChains.R
 e375235083a25a9c1bd00074c587f378 *R/ag.test.R
 9b53dd9f75be38e84dd4d2a9e5957f9a *R/agct.test.R
 8903d3e82c60ba953ba82ad2c4a5e757 *R/auxtests.R
-ddbacf79b9a390f923b3e15c6b51558c *R/chargaff.gibbs.test.R
+cf91a4daa110c11902cdcb472fec1ad0 *R/chargaff.gibbs.test.R
 4fc548df186d2915545252198c3ad3a8 *R/chargaff0.test.R
 37da10736d6ff975020e86eccda1d1f4 *R/chargaff1.test.R
 809bb5c7177cbf099fb6c77300645f41 *R/chargaff2.test.R
@@ -23,7 +23,7 @@ ebb9c805c31f8764786b03368ef28006 *R/disambiguate.R
 4d0764c8e7c83bc4af548bc5a874613e *R/randmat.R
 2eb5e0f7107a75bd483187ff1366bcfb *R/reverseComplement.R
 bc6d679be537b91d5a08b4623109fb91 *R/sysdata.rda
-26f757356944adef7fa823d64269e955 *build/partial.rdb
+f7876d4cc9f860f7e2fdbc09c170ef28 *build/partial.rdb
 2ac532068c08bd745abd9252277243c3 *cleanup
 b581d7947f5410d40c8a67aa4810ed3e *configure
 8bd4ae346b2b54083acdd2c689a0841a *configure.ac
@@ -31,7 +31,7 @@ b581d7947f5410d40c8a67aa4810ed3e *configure
 33b5382c144e8cb24065038bae33d6f4 *data/nanoarchaeum.rda
 39e231aed824a0acbf4311c41d21cf9a *data/pieris.rda
 372389cb29c0ab8f79ff5c35e0aa6ff7 *inst/CITATION
-f23aeb5df45bc7e0d9c34a67d7d82a3e *inst/NEWS.Rd
+efcc1a76b7f5b038bd8cd9f544706c75 *inst/NEWS.Rd
 1a66f20805bfa32e7820013f2f57bd32 *man/ag.test.Rd
 f01308f416fc94c031858354dc39dfd4 *man/agct.test.Rd
 1e92da25fa3bc392e478932261a5bb21 *man/array2vector.Rd
@@ -51,10 +51,10 @@ eb07930d74ad75cd57e532e315be99f9 *man/disambiguate.Rd
 4354c019d579224b9da6baf009603dbf *man/lb.test.Rd
 2456c7851a53741b4a038a562deb1510 *man/markov.disturbance.Rd
 d642464e44ca8b5af4384477330e4368 *man/markov.test.Rd
-e3c242652c229985317413ce1842fb6e *man/nanoarchaeum.Rd
+0e6cd3cfbd954da7bd3405a952abd4cb *man/nanoarchaeum.Rd
 546de28df5fe1ae0d7a56a833d62552d *man/oligoProfile.Rd
 b4a40d18c05d3c632f6e297d36437457 *man/pair.counts.Rd
-4cc7e7c58922bdb166d61cf0298818f0 *man/pieris.Rd
+88366e8ade6f3097da082f8776667631 *man/pieris.Rd
 021fddda76ca5042ae43134f20d4380a *man/quadruple.counts.Rd
 87301bf33ed9cc68eae44dd330e6dca4 *man/rank.test.Rd
 67fa3e70a223a816843178417582679a *man/rcspr2mat.Rd
