@@ -20,7 +20,7 @@
 \alias{chargaff0.test}
 \title{Vector Test of Chargaff's Second Parity Rule (CSPR) for Mononucleotides}
 \description{
-Performs the vector test of Chargaff's second parity rule (CSPR) for mononucleotides proposed in Hart and Martínez (2001).
+Performs the vector test of Chargaff's second parity rule (CSPR) for mononucleotides proposed in Hart and MartÃ­nez (2001).
 }
  \usage{
 chargaff0.test(x, alg=c("exact", "simulate", "lower", "upper", "Lower", "Upper"), n, 
@@ -34,7 +34,7 @@ a DNA sequence stored using the SeqFastadna class from the \pkg{\link[seqinr]{se
 p-value is obtained via Monte Carlo simulation.  If set to \dQuote{\samp{lower}}, an analytic
 lower bound on the p-value is computed.  If set to \dQuote{\samp{upper}}, an analytic upper
 bound on the p-value is computed.  \dQuote{\samp{lower}} and \dQuote{\samp{upper}} are based on formulae
-in Hart and Martínez (2011).  a Tighter (though unpublished) lower
+in Hart and MartÃ­nez (2011).  a Tighter (though unpublished) lower
 /upper bound on the p-value  may be obtained by specifying \dQuote{\samp{Lower}}/\dQuote{\samp{Upper}}. If
 \samp{type} is specified as \dQuote{\samp{exact}} (the default value),the p-value for the test is
 computed exactly for small values of the test statistic and crudely approximated for large values.  See the note below for further details.}
@@ -90,12 +90,12 @@ A list with class "htest.ext" containing the following components:
 \item{alternative}{the alternative hypothesis (\eqn{H_1}{H1}) of the test.}
 }
 \references{
-Hart, A.G. and Martínez, S. (2011)
+Hart, A.G. and MartÃ­nez, S. (2011)
 Statistical testing of Chargaff's second parity rule in bacterial genome sequences.
 \emph{Stoch. Models} \bold{27(2)}, 1--46.
 }
 \author{
-Andrew Hart and Servet Martínez
+Andrew Hart and Servet MartÃ­nez
 }
 \seealso{
 \code{\link{chargaff1.test}}, \code{\link{chargaff2.test}}, 

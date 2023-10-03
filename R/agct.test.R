@@ -21,7 +21,7 @@ n)
 {
 #Check arguments
 	dname <- deparse(substitute(x))
-	if (is.character(x) || class(x)=="SeqFastadna")
+	if (is.character(x) || inherits(x, "SeqFastadna"))
 	{ #extract relative frequencies of nucleic acids from DNA sequence
 		probs <- table(x)
 		x <- c(probs/sum(probs)) #probability-normalise vector

@@ -40,7 +40,7 @@ A list with class \samp{FiniteStateMarkovChain} having the following components:
 \item{states}{the state labels}
 }
 \author{
-Andrew Hart and Servet Martínez
+Andrew Hart and Servet MartÃ­nez
 }
 \seealso{
 \code{\link{markov.test}}, \code{\link{markov.disturbance}}, \code{\link{simulateMarkovChain}}

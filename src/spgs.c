@@ -450,3 +450,14 @@ double *pdScratch, double *pdRes, int *piOverflow)
 	*pdRes = (double)CountIncreasingPairsHelper(pdSeries, 0, *piN, pdScratch, piOverflow);
 } // function
 
+void attribute_visible R_init_spgs(DllInfo *dll)
+{
+    R_registerRoutines(dll, cMethods, NULL, NULL, NULL);
+    R_useDynamicSymbols(dll, FALSE);
+    R_forceSymbols(dll, TRUE);
+	}
+  
+void attribute_hidden R_unload_spgs(DllInfo *info)
+{
+// Nothing needs to be done to unload this dll
+}

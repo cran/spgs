@@ -30,7 +30,7 @@ FillToSquare <- function(x)
 
 statdist <- function(x, copy.names=TRUE)
 {
-	if (is.list(x) || class(x)=="FiniteStateMarkovChain")
+	if (is.list(x) || inherits(x, "FiniteStateMarkovChain"))
 	{
 		if (is.null(x$stat.dist))
 			stop("x is not a valid list or FiniteStateMarkovChain class")

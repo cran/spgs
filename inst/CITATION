@@ -11,6 +11,6 @@ bibentry(bibtype = "Manual",
          note = note,
          url = "https://CRAN.R-project.org/package=spgs",
          textVersion =
-         paste0("Andrew Hart and Servet Martínez (", year, 
+         paste0("Andrew Hart and Servet MartÃ­nez (", year, 
          "). spgs: Statistical Patterns in Genomic Sequences. ", note, "."))
 

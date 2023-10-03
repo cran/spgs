@@ -82,7 +82,7 @@ test (df), the left end of the interval (a) and the right end of the interval
 %% ~put references to the literature/web site here ~
 %}
 \author{
-Andrew Hart and Servet Martínez
+Andrew Hart and Servet MartÃ­nez
 }
 \seealso{
 \code{\link{chisq.test}}, \code{\link{findInterval}}, \code{\link{ks.unif.test}}

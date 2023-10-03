@@ -20,7 +20,7 @@ chargaff2.test <- function(x, alg=c("table", "simulate", "upper"), n, no.p.value
 {
 #Check arguments
 	dname <- deparse(substitute(x))
-	if (is.character(x) || class(x)=="SeqFastadna")
+	if (is.character(x) || inherits(x, "SeqFastadna"))
 	{ #extract relative frequencies of nucleic acids from DNA sequence
 		probs <- pair.counts(x)
 		x<- probs/rowSums(probs) #normalise row sums to unity

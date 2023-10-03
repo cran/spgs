@@ -101,16 +101,8 @@ static const R_CMethodDef cMethods[] = {
   {NULL, NULL, 0, NULL}
 };
 
-void attribute_visible R_init_spgs(DllInfo *dll)
-{
-    R_registerRoutines(dll, cMethods, NULL, NULL, NULL);
-    R_useDynamicSymbols(dll, FALSE);
-	}
-  
-void attribute_hidden R_unload_spgs(DllInfo *info)
-{
-// Nothing needs to be done to unload this dll
-}
+void attribute_visible R_init_spgs(DllInfo *dll);
+void attribute_hidden R_unload_spgs(DllInfo *info);
 
 #ifdef __cplusplus
 } // End of extern "C" block

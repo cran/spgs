@@ -61,7 +61,7 @@ A 3-dimensional array of counts.  The labels of the \eqn{i}-th dimension corresp
 the \eqn{i}-th element of each triple, where \eqn{i} is either 1, 2 or 3.
 }
 \author{
-Andrew Hart and Servet Martínez
+Andrew Hart and Servet MartÃ­nez
 }
 \seealso{
 \code{\link{pair.counts}}, \code{\link{quadruple.counts}},

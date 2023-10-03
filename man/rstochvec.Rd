@@ -46,7 +46,7 @@ At least one of the arguments must be specified.  The missing argument is infere
 A probability vector of length \eqn{n} with elements named according to \samp{labels}.
 }
 \author{
-Andrew Hart and Servet Martínez
+Andrew Hart and Servet MartÃ­nez
 }
 %\seealso{
 %}

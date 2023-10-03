@@ -44,7 +44,7 @@ A list with class "htest" containing the following components:
 \item{data.name}{a character string giving the name of the data.}
 }
 \author{
-Andrew Hart and Servet Martínez
+Andrew Hart and Servet MartÃ­nez
 }
 \seealso{
 \code{\link{chisq.unif.test}}, \code{\link{markov.test}}, \code{\link{diid.test}}

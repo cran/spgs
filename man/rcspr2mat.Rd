@@ -59,7 +59,7 @@ parity rule for dinucleotides. See the reference for further information.
 A 4 X 4 stochastic matrix satisfying Chargaff's second parity rule.  The rows and columns are labelled according to labels.
 }
 \references{
-Hart, A.G. and Martínez, S. (2011)
+Hart, A.G. and MartÃ­nez, S. (2011)
 Statistical testing of Chargaff's second parity rule in bacterial genome sequences.
 \emph{Stoch. Models} \bold{27(2)}, 1--46.
 }
@@ -69,7 +69,7 @@ CSPR. It doe snot sample uniformly from the set of all such matrices and hence
 is not appropriate for simulation experiments requiring uniformly drawn samples.
 }
 \author{
-Andrew Hart and Servet Martínez
+Andrew Hart and Servet MartÃ­nez
 }
 \seealso{
 \code{\link{rstochmat}}

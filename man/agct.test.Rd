@@ -20,7 +20,7 @@
 \alias{agct.test}
 \title{Test of Purine-Pyrimidine Parity Based on Euclidean distance}
 \description{
-Performs a test proposed by Hart and Martínez (2011) for the equivalence of the
+Performs a test proposed by Hart and MartÃ­nez (2011) for the equivalence of the
 relative frequencies of purines (\eqn{A+G}) and pyrimidines (\eqn{C+T}) in DNA
 sequences.  It does this by checking whether or not the mononucleotide
 frequencies of a DNA sequence satisfy the relationship A+G=C+T.
@@ -36,7 +36,7 @@ a DNA sequence stored using the SeqFastadna class from the \pkg{\link[seqinr]{se
 p-value is obtained via Monte Carlo simulation.  If set to \dQuote{\samp{lower}}, an analytic
 lower bound on the p-value is computed.  If set to \dQuote{\samp{upper}}, an analytic upper
 bound on the p-value is computed.  \dQuote{\samp{lower}} and \dQuote{\samp{upper}} are based on formulae
-in Hart and Martínez (2011).  a Tighter (though unpublished) lower bound on the p-value  may be obtained by specifying \dQuote{\samp{Lower}}. If
+in Hart and MartÃ­nez (2011).  a Tighter (though unpublished) lower bound on the p-value  may be obtained by specifying \dQuote{\samp{Lower}}. If
 \samp{alg} is specified as \dQuote{\samp{exact}} (the default value), the p-value for the test is
 computed exactly.}
   \item{n}{The number of replications to use for Monte Carlo simulation.  
@@ -89,12 +89,12 @@ A list with class "htest.ext" containing the following components:
 \item{alternative}{the alternative hypothesis (\eqn{H_1}{H1}) of the test.}
 }
 \references{
-Hart, A.G. and Martínez, S. (2011)
+Hart, A.G. and MartÃ­nez, S. (2011)
 Statistical testing of Chargaff's second parity rule in bacterial genome sequences.
 \emph{Stoch. Models} \bold{27(2)}, 1--46.
 }
 \author{
-Andrew Hart and Servet Martínez
+Andrew Hart and Servet MartÃ­nez
 }
 \seealso{
 \code{\link{chargaff0.test}}, \code{\link{chargaff1.test}}, 

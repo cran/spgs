@@ -52,7 +52,7 @@ labelled \eqn{1,\ldots,n}, where \eqn{n} is the dimension of \samp{trans.mat}.
 A vector of length n containing a realisation of the specified Markov chain.
 }
 \author{
-Andrew Hart and Servet Martínez
+Andrew Hart and Servet MartÃ­nez
 }
 \seealso{
 \code{\link{estimateMarkovChain}}, \code{\link{rstochmat}}, \code{\link{rcspr2mat}}

@@ -71,7 +71,7 @@ Otherwise, if \samp{estimate} is \samp{FALSE}, returns the sequence of random
 noise as a numeric vector.
 }
 \author{
-Andrew Hart and Servet Martínez
+Andrew Hart and Servet MartÃ­nez
 }
 \seealso{
 \code{\link{markov.test}}, \code{\link{diid.test}}, \code{\link{diid.disturbance}}

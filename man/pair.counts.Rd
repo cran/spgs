@@ -55,7 +55,7 @@ A matrix of counts.  The row and column labels correspond to
 the first and second element of each pair, respectively.
 }
 \author{
-Andrew Hart and Servet Martínez
+Andrew Hart and Servet MartÃ­nez
 }
 \seealso{
 \code{\link{triple.counts}}, \code{\link{quadruple.counts}},

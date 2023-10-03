@@ -130,16 +130,16 @@ Although This test procedure is unpublished, it is derived by making appropriate
 modifications to the test for first-order Markovianness described in the 
 following two references.
 
-Hart, A.G. and Martínez, S. (2011)
+Hart, A.G. and MartÃ­nez, S. (2011)
 Statistical testing of Chargaff's second parity rule in bacterial genome sequences.
 \emph{Stoch. Models} \bold{27(2)}, 1--46.
 
-Hart, A.G. and Martínez, S. (2014) 
+Hart, A.G. and MartÃ­nez, S. (2014) 
 Markovianness and Conditional Independence in Annotated Bacterial DNA.  
 \emph{Stat. Appl. Genet. Mol. Biol.} \bold{13(6)}, 693-716.  arXiv:1311.4411 [q-bio.QM].
 }
 \author{
-Andrew Hart and Servet Martínez
+Andrew Hart and Servet MartÃ­nez
 }
 \seealso{
 \code{\link{diid.disturbance}}, \code{\link{markov.test}}, 

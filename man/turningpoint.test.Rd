@@ -72,13 +72,13 @@ This test is useful for detecting cyclic/periodic trends in data series.
 Brockwell, Peter J., Davis, Richard A. (2002) \emph{Introduction to Time Series and Forecasting}.
 Springer Texts in Statistics, Springer-Verlag, New York.
 
-Bienaymé, Irénée-Jules (1874). 
-Sur une question de probabilités.
+BienaymÃ©, IrÃ©nÃ©e-Jules (1874). 
+Sur une question de probabilitÃ©s.
 \emph{Bull. Math. Soc. Fr.}
 \bold{2}, 153-154.
 }
 \author{
-Andrew Hart and Servet Martínez
+Andrew Hart and Servet MartÃ­nez
 }
 \seealso{
 \code{\link{diffsign.test}}, \code{\link{rank.test}}, \code{\link{lb.test}},

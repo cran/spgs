@@ -70,7 +70,7 @@ According to the input \code{x}, a character vector, SeqFastadna object or list
 containing the complement(s) of the sequence(s) in \code{x}.
 }
 \author{
-Andrew Hart and Servet Martínez
+Andrew Hart and Servet MartÃ­nez
 }
 \seealso{
 \code{\link{reverseComplement}}

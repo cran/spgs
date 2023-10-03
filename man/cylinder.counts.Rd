@@ -87,7 +87,7 @@ counts of cylinders of length 1, whereas \code{cylinder.counts} is faster and
 uses less memory than \code{} for cylinders of length greater than 1.  
 }
 \author{
-Andrew Hart and Servet Martínez
+Andrew Hart and Servet MartÃ­nez
 }
 \seealso{
 \code{\link{pair.counts}}, \code{\link{triple.counts}}, 

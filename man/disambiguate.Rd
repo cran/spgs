@@ -68,7 +68,7 @@ According to the input \code{x}, a character vector, SeqFastadna object or list
 containing the  completely unambiguous sequence(s) in \code{x}.
 }
 \author{
-Andrew Hart and Servet Martínez
+Andrew Hart and Servet MartÃ­nez
 }
 %\seealso{
 %}

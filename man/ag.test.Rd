@@ -20,7 +20,7 @@
 \alias{ag.test}
 \title{Test of Purine-Pyrimidine Parity Based on Purine Count}
 \description{
-Performs a test proposed by Hart and Martínez (2011) for the equivalence of the
+Performs a test proposed by Hart and MartÃ­nez (2011) for the equivalence of the
 relative frequencies of purines (\eqn{A+G}) and pyrimidines (\eqn{C+T}) in DNA
 sequences.  It does this by checking whether or not the mononucleotide
 frequencies of a DNA sequence satisfy the relationship A+G=C+T.
@@ -78,12 +78,12 @@ A list with class "htest.ext" containing the following components:
 \item{alternative}{the alternative hypothesis (\eqn{H_1}{H1}) of the test.}
 }
 \references{
-Hart, A.G. and Martínez, S. (2011)
+Hart, A.G. and MartÃ­nez, S. (2011)
 Statistical testing of Chargaff's second parity rule in bacterial genome sequences.
 \emph{Stoch. Models} \bold{27(2)}, 1--46.
 }
 \author{
-Andrew Hart and Servet Martínez
+Andrew Hart and Servet MartÃ­nez
 }
 \seealso{
 \code{\link{chargaff0.test}}, \code{\link{chargaff1.test}}, 

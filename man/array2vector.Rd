@@ -71,7 +71,7 @@ entry of the \code{dim} attribute.
 An integer vector with names set as described in \sQuote{Details}.
 }
 \author{
-Andrew Hart and Servet Martínez
+Andrew Hart and Servet MartÃ­nez
 }
 \seealso{
 \code{\link{pair.counts}}, \code{\link{triple.counts}}, 

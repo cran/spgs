@@ -88,7 +88,7 @@ Brockwell, Peter J., Davis, Richard A. (2002) \emph{Introduction to Time Series 
 Springer Texts in Statistics, Springer-Verlag, New York.
 }
 \author{
-Andrew Hart and Servet Martínez
+Andrew Hart and Servet MartÃ­nez
 }
 \seealso{
 \code{\link{diffsign.test}}, \code{\link{turningpoint.test}}, \code{\link{lb.test}},

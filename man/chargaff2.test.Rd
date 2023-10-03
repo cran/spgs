@@ -20,7 +20,7 @@
 \alias{chargaff2.test}
 \title{Matrix Test of CSPR for Dinucleotides}
 \description{
-Performs the matrix test of Chargaff's second parity rule (CSPR) for dinucleotides proposed in Hart and Martínez (2011).
+Performs the matrix test of Chargaff's second parity rule (CSPR) for dinucleotides proposed in Hart and MartÃ­nez (2011).
 }
  \usage{
 chargaff2.test(x, alg=c("table", "simulate", "upper"), n, no.p.value=FALSE)
@@ -32,7 +32,7 @@ a DNA sequence stored using the SeqFastadna class from the \pkg{\link[seqinr]{se
 \item{alg}{the algorithm for computing the p-value.  If set to \dQuote{\samp{simulate}}, the
 p-value is obtained via Monte Carlo simulation.  If set to \dQuote{\samp{upper}}, an analytic upper
 bound on the p-value is computed.  \dQuote{\samp{upper}} are based on formulae
-in Hart and Martínez (2011).  If
+in Hart and MartÃ­nez (2011).  If
 \samp{type} is specified as \dQuote{\samp{table}} (the default value),the p-value for the test is
 obtained from a linear interpolation of a look-up table.  See the note below for further details.}
   \item{n}{The number of replications to use for Monte Carlo simulation.  
@@ -78,12 +78,12 @@ world applications.
 test statistic.
 }
 \references{
-Hart, A.G. and Martínez, S. (2011)
+Hart, A.G. and MartÃ­nez, S. (2011)
 Statistical testing of Chargaff's second parity rule in bacterial genome sequences.
 \emph{Stoch. Models} \bold{27(2)}, 1--46.
 }
 \author{
-Andrew Hart and Servet Martínez
+Andrew Hart and Servet MartÃ­nez
 }
 \seealso{
 \code{\link{chargaff0.test}}, \code{\link{chargaff1.test}}%, 

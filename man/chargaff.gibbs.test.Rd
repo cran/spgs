@@ -20,7 +20,7 @@
 \alias{chargaff.gibbs.test}
 \title{Test of CSPR for Dinucleotides Under Gibbs Distribution}
 \description{
-Performs a test of Chargaff's second parity rule (CSPR) for dinucleotides under a Gibbsian assumption on the DNA sequence, which was  proposed in Hart and Martínez (2012).
+Performs a test of Chargaff's second parity rule (CSPR) for dinucleotides under a Gibbsian assumption on the DNA sequence, which was  proposed in Hart and MartÃ­nez (2012).
 }
  \usage{
 chargaff.gibbs.test(x, maxLag=200)
@@ -57,12 +57,12 @@ A list with class "htest" containing the following components:
 \item{maxCutoff}{the value specified for the maxLag parameter when the test was performed.}
 }
 \references{
-Hart, A.G. and Martínez, S. (2012)
+Hart, A.G. and MartÃ­nez, S. (2012)
 A Gibbs approach to Chargaff's second parity rule.
 \emph{J. Stat. Phys.} \bold{146(2)}, 408-422.
 }
 \author{
-Andrew Hart and Servet Martínez
+Andrew Hart and Servet MartÃ­nez
 }
 \seealso{
 \code{\link{chargaff0.test}}, \code{\link{chargaff1.test}}, 

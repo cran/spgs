@@ -160,7 +160,7 @@ with Chargaff's second parity rules through inversions and inverted
 transpositions. \emph{PNAS} \bold{103(47)}, 17828--17833.
 }
 \author{
-Andrew Hart and Servet Martínez
+Andrew Hart and Servet MartÃ­nez
 }
 \seealso{
 \code{\link{pair.counts}}, \code{\link{triple.counts}}, 

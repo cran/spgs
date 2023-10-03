@@ -45,7 +45,7 @@ At least one of the arguments must be specified.  The missing argument is infere
 An \eqn{n\times n}{n X n} stochastic matrix with rows and columns labelled according to \samp{labels}.
 }
 \author{
-Andrew Hart and Servet Martínez
+Andrew Hart and Servet MartÃ­nez
 }
 \seealso{
 \code{\link{rcspr2mat}}, \code{\link{estimateMarkovChain}}, \code{\link{simulateMarkovChain}}
